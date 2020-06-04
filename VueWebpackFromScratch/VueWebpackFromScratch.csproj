@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Client\HelloWorld.ts" />
+    <None Remove="Client\main.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="Client\HelloWorld.ts" />
+    <TypeScriptCompile Include="Client\main.ts" />
+  </ItemGroup>
+
+	<Target Name="NPMResolve" BeforeTargets="Build">
+		<Exec Command="npm install" />
+	</Target>
+
+</Project>
